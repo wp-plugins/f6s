@@ -84,45 +84,45 @@ members (list) - list of all team’s members, has properties:
 
 You can resize thumbnails according to your specifications using html / css attributes. The plugin served them in a single size.
 
-** Including data from f6s: *
+**Including data from f6s:*
 
 The data can be displayed in Wordpress posts and pages by using shortcodes. You will be making use of the following:
 
-`[deal]` (self-closing) - single deal object. Has the following attributes:
+[deal] (self-closing) - single deal object. Has the following attributes:
 
 	- program - the ID of your accelerator or event profile
 	- id - the ID of the deal
 	- display - property that you want to display. See “Valid Properties for Deals”
 
-`[deal-list]` (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
+[deal-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
 
 	- program - the ID of your accelerator or event profile
 
-`[mentor]` (self-closing OR enclosing) - single deal object. Has the following attributes:
+[mentor] (self-closing OR enclosing) - single deal object. Has the following attributes:
 
 	- program - the ID of your accelerator or event profile
 	- id - the ID of the deal
 	- display (used with self-closing mentor object) - property that you want to display. See “Valid Properties for Mentors”
 	- list (used with enclosing mentor object) - use this to loop though the properties marked as list (Valid Properties for Mentors). See examples from ...
 
-`[mentors-list]` (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
+[mentors-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
 
 	- program - the ID of your accelerator or event profile
 
-`[team]` (self-closing OR enclosing) - single team object. Has the following attributes:
+[team] (self-closing OR enclosing) - single team object. Has the following attributes:
 
 	- program - the ID of your accelerator profile
 	- id - the ID of the team
 	- display (used with self-closing mentor object) - property that you want to display. See “Valid Properties for Team”
 	- list (used with enclosing mentor object) - use this to loop though the properties marked as list (Valid Properties for Mentors). See examples from ...
 
-`[team-list]` (enclosing) -  loop through a list of teams, one by one. Has the following attributes:
+[team-list] (enclosing) -  loop through a list of teams, one by one. Has the following attributes:
 
 	- program - the ID of your accelerator profile
 
-`[f6s-data]` (enclosing) - put your html inside this shortcode to protect it from alterations when switching between HTML and Visual mode
+[f6s-data] (enclosing) - put your html inside this shortcode to protect it from alterations when switching between HTML and Visual mode
 
-`[list-index]` (enclosing) - to be used inside a list structure. Conditions the content in between. 
+[list-index] (enclosing) - to be used inside a list structure. Conditions the content in between. 
 
 Has the following properties:
 
@@ -158,12 +158,12 @@ multiple of the given value, when looping through list items
 = My shortcodes seems to be broken when viewing a post, although I am sure the structure is correct. What should I do? =
 
 1. Check if the f6s plugin is active
-2. Add a slash to the end of each self-closing tag (e.g. `[deal display=name /]`)
+2. Add a slash to the end of each self-closing tag (e.g. [deal display=name /])
 3. Make sure you're editing the post in HTML mode not Visual Mode
 
 = Switching to Visual Mode breaks my shortcodes. What now? =
 
-Try enclosing all your f6s shotcodes between `[f6s-data]` and `[/f6s-data]`
+Try enclosing all your f6s shotcodes between [f6s-data] and [/f6s-data]
 
 == Changelog ==
 
