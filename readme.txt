@@ -3,7 +3,7 @@ Contributors: f6s,emanuellainas
 Tags: f6s, data, api, mentors, teams, entrepreneurs, profile, deals
 Requires at least: 3.4
 Tested up to: 3.4
-Stable tag: 0.3.1
+Stable tag: 0.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,37 +19,37 @@ Please direct any questions or bug reports to support@f6s.com
 
 1. Valid Properties for Deals
 
-id - reference id of the deal
-name - name of the deal
-description - description of the deal
-thumbnail - information about the deal image:
+- id - reference id of the deal
+- name - name of the deal
+- description - description of the deal
+- thumbnail - information about the deal image:
 	- thumbnail.url - full URL of the deal thumbnail
 	- thumbnail.width / thumbnail.height - size, in pixels of the image
-value - value of the deal
-beta - is this a beta product
-category - internal category of the deal
-- category.id - internal id of category
-- category.name - name of category
-company - publisher company of the deal
-- company.id -  id of company profile
-- company.name - name of company
-- company.url -  company profile url
-url - url where more info about this deal available
-get_deal_url - url to get the deal
+- value - value of the deal
+- beta - is this a beta product
+- category - internal category of the deal
+	- category.id - internal id of category
+	- category.name - name of category
+- company - publisher company of the deal
+	- company.id -  id of company profile
+	- company.name - name of company
+	- company.url -  company profile url
+- url - url where more info about this deal available
+- get_deal_url - url to get the deal
 
 2. Valid Properties for Mentors
 
-id - reference id of the mentor
-name - name of the mentor
-description - mentor profile description
-url - f6s profile url
-current_title - current work title of the mentor (ex: CEO of ExampleCompany) - empty string if no data available
-thumbnail - information about the mentor’s profile image:
+- id - reference id of the mentor
+- name - name of the mentor
+- description - mentor profile description
+- url - f6s profile url
+- current_title - current work title of the mentor (ex: CEO of ExampleCompany) - empty string if no data available
+- thumbnail - information about the mentor’s profile image:
 	- thumbnail.url - full URL of the mentor thumbnail
 	- thumbnail.width / thumbnail.height - size, in pixels of the image
-skills (list) - list of mentor skills, has properties:
+- skills (list) - list of mentor skills, has properties:
 	- name - name of the skill
-links (list) - list of profile links, has properties:
+- links (list) - list of profile links, has properties:
 	- type - link type, can be: website, facebook, twitter, linkedin, github, iosapp, android, mobile
 - value - the actual URL
 mentored_orgs (list) - list of all organizations mentored by this person, has properties:
@@ -61,17 +61,17 @@ mentored_orgs (list) - list of all organizations mentored by this person, has pr
 	
 3. Valid Properties for Teams
 
-id - reference id of the team
-name - name of the team
-description - description of the team
-url - f6s profile url
-thumbnail - information about the team’s profile image:
+- id - reference id of the team
+- name - name of the team
+- description - description of the team
+- url - f6s profile url
+- thumbnail - information about the team’s profile image:
 	- thumbnail.url - full URL of the mentor thumbnail
 	- thumbnail.width / thumbnail.height - size, in pixels of the image
-links (list) - list of profile links, has properties:
+- links (list) - list of profile links, has properties:
 	- type - link type, can be: website, facebook, twitter, linkedin, github, iosapp, android, mobile
 - value - the actual URL
-members (list) - list of all team’s members, has properties:
+- members (list) - list of all team’s members, has properties:
 	- profile_id - reference id of the person
 	- name - name of the person
 	- url - f6s profile url
