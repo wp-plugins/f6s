@@ -3,7 +3,7 @@ Contributors: f6s,emanuellainas
 Tags: f6s, data, api, mentors, teams, entrepreneurs, profile, deals
 Requires at least: 3.4
 Tested up to: 3.4
-Stable tag: 0.3.3
+Stable tag: 0.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,7 +44,7 @@ Please direct any questions or bug reports to support@f6s.com
 - description - mentor profile description
 - url - f6s profile url
 - current_title - current work title of the mentor (ex: CEO of ExampleCompany) - empty string if no data available
-- thumbnail - information about the mentor‚Äôs profile image:
+- thumbnail - information about the mentor’s profile image:
 	- thumbnail.url - full URL of the mentor thumbnail
 	- thumbnail.width / thumbnail.height - size, in pixels of the image
 - skills (list) - list of mentor skills, has properties:
@@ -65,13 +65,13 @@ mentored_orgs (list) - list of all organizations mentored by this person, has pr
 - name - name of the team
 - description - description of the team
 - url - f6s profile url
-- thumbnail - information about the team‚Äôs profile image:
+- thumbnail - information about the team’s profile image:
 	- thumbnail.url - full URL of the mentor thumbnail
 	- thumbnail.width / thumbnail.height - size, in pixels of the image
 - links (list) - list of profile links, has properties:
 	- type - link type, can be: website, facebook, twitter, linkedin, github, iosapp, android, mobile
 - value - the actual URL
-- members (list) - list of all team‚Äôs members, has properties:
+- members (list) - list of all team’s members, has properties:
 	- profile_id - reference id of the person
 	- name - name of the person
 	- url - f6s profile url
@@ -88,43 +88,43 @@ You can resize thumbnails according to your specifications using html / css attr
 
 The data can be displayed in Wordpress posts and pages by using shortcodes. You will be making use of the following:
 
-[deal] (self-closing) - single deal object. Has the following attributes
+[deal] (self-closing) - single deal object. Has the following attributes:
 
-	- program - the ID of your accelerator or event profile
-	- id - the ID of the deal
-	- display - property that you want to display. See ‚ÄúValid Properties for Deals‚Äù
+- program - the ID of your accelerator or event profile
+- id - the ID of the deal
+- display - property that you want to display. See “Valid Properties for Deals”
 
-[deal-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes
+[deal-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
 
-	- program - the ID of your accelerator or event profile
+- program - the ID of your accelerator or event profile
 
-[mentor] (self-closing OR enclosing) - single deal object. Has the following attributes
+[mentor] (self-closing OR enclosing) - single deal object. Has the following attributes:
 
-	- program - the ID of your accelerator or event profile
-	- id - the ID of the deal
-	- display (used with self-closing mentor object) - property that you want to display. See ‚ÄúValid Properties for Mentors‚Äù
-	- list (used with enclosing mentor object) - use this to loop though the properties marked as list (Valid Properties for Mentors). See examples from ...
+- program - the ID of your accelerator or event profile
+- id - the ID of the deal
+- display (used with self-closing mentor object) - property that you want to display. See “Valid Properties for Mentors”
+- list (used with enclosing mentor object) - use this to loop though the properties marked as list (Valid Properties for Mentors). See examples from ...
 
-[mentors-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes
+[mentors-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
 
-	- program - the ID of your accelerator or event profile
+- program - the ID of your accelerator or event profile
 
-[team] (self-closing OR enclosing) - single team object. Has the following attributes
+[team] (self-closing OR enclosing) - single team object. Has the following attributes:
 
-	- program - the ID of your accelerator profile
-	- id - the ID of the team
-	- display (used with self-closing mentor object) - property that you want to display. See ‚ÄúValid Properties for Team‚Äù
-	- list (used with enclosing mentor object) - use this to loop though the properties marked as list (Valid Properties for Mentors). See examples from ...
+- program - the ID of your accelerator profile
+- id - the ID of the team
+- display (used with self-closing mentor object) - property that you want to display. See “Valid Properties for Team”
+- list (used with enclosing mentor object) - use this to loop though the properties marked as list (Valid Properties for Mentors). See examples from ...
 
-[team-list] (enclosing) -  loop through a list of teams, one by one. Has the following attributes
+[team-list] (enclosing) -  loop through a list of teams, one by one. Has the following attributes:
 
-	- program - the ID of your accelerator profile
+- program - the ID of your accelerator profile
 
 [f6s-data] (enclosing) - put your html inside this shortcode to protect it from alterations when switching between HTML and Visual mode
 
 [list-index] (enclosing) - to be used inside a list structure. Conditions the content in between. 
 
-Has the following properties
+Has the following properties:
 
 - first (no value) - the enclosing content will only be displayed once, at the beginning of the list;
 
