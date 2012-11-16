@@ -3,7 +3,7 @@ Contributors: f6s,emanuellainas
 Tags: f6s, data, api, mentors, teams, entrepreneurs, profile, deals
 Requires at least: 3.4
 Tested up to: 3.4
-Stable tag: 0.3.2
+Stable tag: 0.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ Please direct any questions or bug reports to support@f6s.com
 
 **Data Items Available through the f6s WP Plugin:**
 
-1. Valid Properties for Deals
+**Valid Properties for Deals**
 
 - id - reference id of the deal
 - name - name of the deal
@@ -37,7 +37,7 @@ Please direct any questions or bug reports to support@f6s.com
 - url - url where more info about this deal available
 - get_deal_url - url to get the deal
 
-2. Valid Properties for Mentors
+**Valid Properties for Mentors**
 
 - id - reference id of the mentor
 - name - name of the mentor
@@ -59,7 +59,7 @@ mentored_orgs (list) - list of all organizations mentored by this person, has pr
 		- thumbnail.url - full URL of the organization thumbnail
 		- thumbnail.width / thumbnail.height - size, in pixels of the image
 	
-3. Valid Properties for Teams
+**Valid Properties for Teams**
 
 - id - reference id of the team
 - name - name of the team
@@ -84,39 +84,39 @@ mentored_orgs (list) - list of all organizations mentored by this person, has pr
 
 You can resize thumbnails according to your specifications using html / css attributes. The plugin served them in a single size.
 
-**Including data from f6s:*
+**Including data from f6s:**
 
 The data can be displayed in Wordpress posts and pages by using shortcodes. You will be making use of the following:
 
-[deal] (self-closing) - single deal object. Has the following attributes:
+[deal] (self-closing) - single deal object. Has the following attributes
 
 	- program - the ID of your accelerator or event profile
 	- id - the ID of the deal
 	- display - property that you want to display. See “Valid Properties for Deals”
 
-[deal-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
+[deal-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes
 
 	- program - the ID of your accelerator or event profile
 
-[mentor] (self-closing OR enclosing) - single deal object. Has the following attributes:
+[mentor] (self-closing OR enclosing) - single deal object. Has the following attributes
 
 	- program - the ID of your accelerator or event profile
 	- id - the ID of the deal
 	- display (used with self-closing mentor object) - property that you want to display. See “Valid Properties for Mentors”
 	- list (used with enclosing mentor object) - use this to loop though the properties marked as list (Valid Properties for Mentors). See examples from ...
 
-[mentors-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
+[mentors-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes
 
 	- program - the ID of your accelerator or event profile
 
-[team] (self-closing OR enclosing) - single team object. Has the following attributes:
+[team] (self-closing OR enclosing) - single team object. Has the following attributes
 
 	- program - the ID of your accelerator profile
 	- id - the ID of the team
 	- display (used with self-closing mentor object) - property that you want to display. See “Valid Properties for Team”
 	- list (used with enclosing mentor object) - use this to loop though the properties marked as list (Valid Properties for Mentors). See examples from ...
 
-[team-list] (enclosing) -  loop through a list of teams, one by one. Has the following attributes:
+[team-list] (enclosing) -  loop through a list of teams, one by one. Has the following attributes
 
 	- program - the ID of your accelerator profile
 
@@ -124,9 +124,9 @@ The data can be displayed in Wordpress posts and pages by using shortcodes. You 
 
 [list-index] (enclosing) - to be used inside a list structure. Conditions the content in between. 
 
-Has the following properties:
+Has the following properties
 
-	- first (no value) - the enclosing content will only be displayed once, at the beginning of the list;
+- first (no value) - the enclosing content will only be displayed once, at the beginning of the list;
 
 - notfirst (no value) - opposite of first, the enclosing content will not be displayed at the beginning of the list;
 
