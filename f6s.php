@@ -3,7 +3,7 @@
 Plugin Name: f6s Wordpress Plugin
 Plugin URI: http://www.f6s.com
 Description: Integrate f6s data into your WordPress Site
-Version: 0.3
+Version: 0.4
 Author: f6s.com
 License: GPL2
 */
@@ -52,12 +52,19 @@ function f6s_santize_api_key( $api_key ) {
 }
 
 function f6s_reset_cache( $value ) {
-	global $f6s_shortcodes, $f6s_transient_pref;
+	global $f6s_shortcodes, $f6s_transient_pref, $wpdb;
 
 	if( 1 == (int) $value ) {
 		foreach( array_keys( $f6s_shortcodes ) as $type ) {
-			$f6s_transient_name = $f6s_transient_pref . $type;
-			delete_transient( $f6s_transient_name );
+			// Identify all used transients
+			$transient_pref = '_transient_';
+			$f6s_transient_form = $transient_pref . $f6s_transient_pref . $type . '_%';
+			$query = $wpdb->prepare( "SELECT `option_name` FROM $wpdb->options WHERE `option_name` LIKE '%s';", $f6s_transient_form );
+			$f6s_transient_names = $wpdb->get_col( $query );
+			foreach( $f6s_transient_names as $f6s_transient_name ) {
+				$f6s_transient_name = substr( $f6s_transient_name, strlen( $transient_pref ) );
+				delete_transient( $f6s_transient_name );
+			}
 		}
 		add_settings_error( 'f6s_reset_cache', null, 'Success! The cache has been reset. Refresh your site to see the latest data.', 'updated' );
 	}
@@ -132,7 +139,7 @@ function f6s_get_data( $type, $param ) {
 	
 	if ( ! in_array( $type, array_keys( $f6s_shortcodes ) ) ) return '';
 	
-	$f6s_transient_name = $f6s_transient_pref . $type;
+	$f6s_transient_name = $f6s_transient_pref . $type . '_' . $param;
 	$raw_data = get_transient( $f6s_transient_name );
 	if( false == $raw_data ) {
 		// No cache
