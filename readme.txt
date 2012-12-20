@@ -3,7 +3,7 @@ Contributors: f6s,emanuellainas
 Tags: f6s, data, api, mentors, teams, entrepreneurs, profile, deals
 Requires at least: 3.4
 Tested up to: 3.4
-Stable tag: 0.4.2
+Stable tag: 0.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,13 +51,11 @@ Please direct any questions or bug reports to support@f6s.com
 	- name - name of the skill
 - links (list) - list of profile links, has properties:
 	- type - link type, can be: website, facebook, twitter, linkedin, github, iosapp, android, mobile
-- value - the actual URL
-mentored_orgs (list) - list of all organizations mentored by this person, has properties:
+	- value - the actual URL
+- mentor_of (list) - list of all organizations mentored by this person, has properties:
 	- name - name of the organization
 	- url - f6s URL of the organization
-- thumbnail - information about the organization image:
-		- thumbnail.url - full URL of the organization thumbnail
-		- thumbnail.width / thumbnail.height - size, in pixels of the image
+	- thumbnail - information about the organization image, with properties: url and width / height
 	
 **Valid Properties for Teams**
 
@@ -66,18 +64,18 @@ mentored_orgs (list) - list of all organizations mentored by this person, has pr
 - description - description of the team
 - url - f6s profile url
 - thumbnail - information about the team’s profile image:
-	- thumbnail.url - full URL of the mentor thumbnail
+	- thumbnail.url - full URL of the team thumbnail
 	- thumbnail.width / thumbnail.height - size, in pixels of the image
 - links (list) - list of profile links, has properties:
 	- type - link type, can be: website, facebook, twitter, linkedin, github, iosapp, android, mobile
-- value - the actual URL
+	- value - the actual URL
 - members (list) - list of all team’s members, has properties:
-	- profile_id - reference id of the person
+	- id - reference id of the person
 	- name - name of the person
 	- url - f6s profile url
 - thumbnail - information about the organization image:
-		- thumbnail.url - full URL of the organization thumbnail
-		- thumbnail.width / thumbnail.height - size, in pixels of the image
+	- thumbnail.url - full URL of the team thumbnail
+	- thumbnail.width / thumbnail.height - size, in pixels of the image
 
 
 **Resizing thumbnails:**
