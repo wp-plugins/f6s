@@ -3,7 +3,7 @@ Contributors: f6s,emanuellainas
 Tags: f6s, data, api, mentors, teams, entrepreneurs, profile, deals
 Requires at least: 3.4
 Tested up to: 3.4
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -166,6 +166,9 @@ multiple of the given value, when looping through list items
 Try enclosing all your f6s shotcodes between [f6s-data] and [/f6s-data]
 
 == Changelog ==
+
+= 0.4 =
+* Multiple lists on the same page now work properly
 
 = 0.3 =
 * Added support for teams
