@@ -3,7 +3,7 @@
 Plugin Name: f6s Wordpress Plugin
 Plugin URI: http://www.f6s.com
 Description: Integrate f6s data into your WordPress Site
-Version: 0.4
+Version: 0.5
 Author: f6s.com
 License: GPL2
 */
@@ -134,7 +134,7 @@ function f6s_conv_currency( $currency ) {
 	);
 }
 
-function f6s_get_data( $type, $param ) {
+function f6s_get_data( $type, $param, $args = array() ) {
 	global $f6s_shortcodes, $f6s_transient_pref, $f6s_transient_time;
 	
 	if ( ! in_array( $type, array_keys( $f6s_shortcodes ) ) ) return '';
@@ -157,7 +157,10 @@ function f6s_get_data( $type, $param ) {
 				$api_url = 'http://www.f6s.com/f6sapi/' . $param . '/teams/browse?api_key=' . $api_key;
 				break;
 		}
-		$raw_data = wp_remote_fopen( $api_url );
+        if ($args) {
+            $api_url .= '&'.http_build_query($args);
+        }
+		$raw_data = file_get_contents( $api_url );
 	}
 
 	if ( '' != trim( $raw_data ) ) {
@@ -236,8 +239,16 @@ function shortcode_item_list( $atts, $content = null, $tag, $data = null ) {
 	
 		$param = $f6s_shortcodes[ $tag ][0];
 		if( ! isset( $$param ) || ! is_numeric( $$param ) ) return '';
+        
+        $args = array();
+        foreach ($f6s_shortcodes[ $tag ] as $key => $shortcode) {
+            if ($key == 0) continue;
+            
+            if (isset($$shortcode) && !empty($$shortcode)) 
+                $args[$shortcode] = $$shortcode;
+        }
 
-		$data = f6s_get_data( $tag, $$param );
+		$data = f6s_get_data( $tag, $$param, $args );
 	}
 
 	$ret = '';
@@ -332,8 +343,16 @@ function shortcode_item( $atts, $content = null, $tag ) {
 		
 		$param = $f6s_shortcodes[ $tag ][0];
 		if( ! isset( $$param ) || ! is_numeric( $$param ) ) return '';
+        
+        $args = array();
+        foreach ($f6s_shortcodes[ $tag ] as $key => $shortcode) {
+            if ($key == 0) continue;
+            
+            if (isset($$shortcode) && !empty($$shortcode)) 
+                $args[$shortcode] = $$shortcode;
+        }
 
-		$data = f6s_get_data( $tag, $$param );
+		$data = f6s_get_data( $tag, $$param, $args );
 		$objects = $tag . 's';
 		if ( is_object( $data ) && property_exists( $data, $objects ) ) {
 			foreach ( $data->$objects as $item ) {
