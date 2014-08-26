@@ -3,13 +3,13 @@
 Plugin Name: f6s Wordpress Plugin
 Plugin URI: http://www.f6s.com
 Description: Integrate f6s data into your WordPress Site
-Version: 0.5
+Version: 0.5.1
 Author: f6s.com
 License: GPL2
 */
 
 $f6s_shortcodes = array(
-	'deal' => array( 'program' ), 
+	'deal' => array( 'program', 'area' ), 
 	'mentor' => array( 'mentoring' ),
 	'team' => array( 'program' )
 );
