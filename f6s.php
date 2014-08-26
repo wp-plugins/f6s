@@ -3,7 +3,7 @@
 Plugin Name: f6s Wordpress Plugin
 Plugin URI: http://www.f6s.com
 Description: Integrate f6s data into your WordPress Site
-Version: 0.5.1
+Version: 0.5.2
 Author: f6s.com
 License: GPL2
 */
@@ -234,6 +234,7 @@ function shortcode_item_list( $atts, $content = null, $tag, $data = null ) {
 	if ( is_null( $data ) ) {
 		extract( shortcode_atts( array(
 			'program' => null,
+			'area' => null,
 			'mentoring' => null
 		), $atts ) );
 	
