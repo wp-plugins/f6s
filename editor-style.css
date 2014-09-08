@@ -1,0 +1,8 @@
+/* CSS Document */
+
+img.f6sDealList {
+	border: 1px dashed #ccc;
+	background: #fefefe url("images/logo.png") no-repeat scroll center center;
+	width: 200px;
+	height: 80px;
+}
