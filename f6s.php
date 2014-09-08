@@ -3,7 +3,7 @@
 Plugin Name: f6s Wordpress Plugin
 Plugin URI: http://www.f6s.com
 Description: Integrate f6s data into your WordPress Site
-Version: 0.5.2
+Version: 0.5.3
 Author: f6s.com
 License: GPL2
 */
@@ -136,10 +136,15 @@ function f6s_conv_currency( $currency ) {
 
 function f6s_get_data( $type, $param, $args = array() ) {
 	global $f6s_shortcodes, $f6s_transient_pref, $f6s_transient_time;
-	
+    
 	if ( ! in_array( $type, array_keys( $f6s_shortcodes ) ) ) return '';
 	
-	$f6s_transient_name = $f6s_transient_pref . $type . '_' . $param;
+    $suffix = $param;
+    if ($args) {
+        $suffix .= http_build_query($args);
+    }
+    $suffix = substr(md5($suffix), 0, 12);
+	$f6s_transient_name =  $f6s_transient_pref . $type . '_' . $suffix;
 	$raw_data = get_transient( $f6s_transient_name );
 	if( false == $raw_data ) {
 		// No cache

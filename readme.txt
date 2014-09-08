@@ -3,7 +3,7 @@ Contributors: f6s,emanuellainas
 Tags: f6s, data, api, mentors, teams, entrepreneurs, profile, deals
 Requires at least: 3.4
 Tested up to: 3.4
-Stable tag: 0.5.2
+Stable tag: 0.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,7 @@ The data can be displayed in Wordpress posts and pages by using shortcodes. You 
 [deal-list] (enclosing) -  loop through a list of deals, one by one. Has the following attributes:
 
 - program - the ID of your accelerator or event profile
+- area    - category slug of the deals (see http://www.f6s.com/deals/accounting for category examples). The category slug is the last segment of the URL when accessing a deal category.
 
 [mentor] (self-closing OR enclosing) - single deal object. Has the following attributes:
 
