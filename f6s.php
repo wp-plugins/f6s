@@ -3,7 +3,7 @@
 Plugin Name: f6s Wordpress Plugin
 Plugin URI: http://www.f6s.com
 Description: Integrate f6s data into your WordPress Site
-Version: 0.5.3
+Version: 0.5.4
 Author: f6s.com
 License: GPL2
 */
@@ -165,7 +165,7 @@ function f6s_get_data( $type, $param, $args = array() ) {
         if ($args) {
             $api_url .= '&'.http_build_query($args);
         }
-		$raw_data = file_get_contents( $api_url );
+		$raw_data = wp_remote_retrieve_body( wp_remote_get( $api_url ));
 	}
 
 	if ( '' != trim( $raw_data ) ) {
@@ -206,6 +206,13 @@ function f6s_get_data( $type, $param, $args = array() ) {
 	}
 	return false;
 }
+
+function f6s_filter_timeout_time($time) {
+	$time = 25; //new number of seconds
+	return $time;
+}
+
+add_filter('http_request_timeout', 'f6s_filter_timeout_time');
 
 function get_display_property( $data = null, $display = null ) {
 	if ( is_null( $data ) || is_null( $display ) ) return '';
